@@ -13,7 +13,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 		end
 
 		# Sycnhed folders path
-		# docker.vm.synced_folder "../code", "/docker_code"
+		docker.vm.synced_folder "flask-app", "/flask-app"
 		# docker.vm.synced_folder "../dockerserver", "/docker_dockerserver"
 
 		# docker Server
@@ -34,6 +34,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 			sudo yum install -y docker-engine
 			sudo systemctl enable docker.service
 			sudo systemctl enable docker
+			sudo yum install -y lynx
 		SHELL
 	end
 
