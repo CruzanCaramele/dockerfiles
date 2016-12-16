@@ -33,7 +33,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 			EOF
 			sudo yum install -y docker-engine
 			sudo systemctl enable docker.service
-			sudo systemctl enable docker
+			sudo systemctl start docker
 			sudo yum install -y lynx
 		SHELL
 	end
