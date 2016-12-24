@@ -19,6 +19,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 		# docker Server
 		docker.vm.box = "boxcutter/centos72"
 		docker.vm.box_check_update = false
+		docker.vm.network "forwarded_port" , guest: 8000 , host: 8000
+		docker.vm.network "forwarded_port" , guest: 8001 , host: 8001
+		docker.vm.network "forwarded_port" , guest: 8030 , host: 8030
 
 		# Shell provisioning
 		docker.vm.provision "shell", inline: <<-SHELL
